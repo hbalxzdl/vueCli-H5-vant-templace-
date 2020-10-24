@@ -7,7 +7,7 @@
         </div>
 
         <svg-icon icon-class="add"/>
-
+ 
 
     </div>
 </template>

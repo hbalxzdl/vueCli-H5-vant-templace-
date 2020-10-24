@@ -20,17 +20,10 @@
     </div>
 </template>
 
-<script>
-    import Vue from 'vue'
-    import {NavBar, List, Cell} from 'vant';
-    Vue.use(NavBar, List, Cell)
+<script>  
 
-    export default {
-        components: {
-            [NavBar.name]: NavBar,
-            [List.name]: List,
-            [Cell.name]: Cell,
-        },
+    export default { 
+       
         name: "index",
         data() {
             return {

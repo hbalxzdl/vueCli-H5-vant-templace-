@@ -1,6 +1,4 @@
 import Vue from 'vue'
-import { Toast } from 'vant';
-Vue.use(Toast)
 
 import axios from 'axios'
 import util from '@/libs/util'

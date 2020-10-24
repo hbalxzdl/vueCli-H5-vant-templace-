@@ -43,7 +43,7 @@ router.beforeEach(async (to, from, next) => {
 
 
     } else {
-        没有登录的时候
+        //没有登录的时候
         if (to.path === '/login'){
             next()
         }else {

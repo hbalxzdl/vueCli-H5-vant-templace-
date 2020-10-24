@@ -1,3 +1,6 @@
+const autoprefixer = require('autoprefixer')
+const pxtorem = require('postcss-pxtorem')
+
 // 拼接路径
 const resolve = dir => require('path').join(__dirname, dir)
 // 判断当前环境是否处于开发环境
@@ -43,8 +46,10 @@ module.exports = {
             // css预设器配置项
             postcss: {
                 plugins: [
-                    require('postcss-px2rem')({
-                        remUnit: 100
+                    autoprefixer(),
+                    pxtorem({
+                        rootValue: 16,
+                        propList: ['*']
                     })
                 ]
             },
