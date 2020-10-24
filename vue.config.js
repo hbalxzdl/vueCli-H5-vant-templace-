@@ -49,7 +49,11 @@ module.exports = {
                     autoprefixer(),
                     pxtorem({
                         rootValue: 16,
-                        propList: ['*']
+                        propList: ['*'], // 指定转换的css属性的单位，*代表全部css属性的单位都进行转换
+                        minPixelValue: 1, // 默认值1，小于或等于1px则不进行转换
+                        selectorBlackList: ["wrap"], // 指定不转换为视窗单位的类名，
+                        landscape: false, // 是否处理横屏情况
+                        unitPrecision: 6, // 转换后的精度，即小数点位数
                     })
                 ]
             },
