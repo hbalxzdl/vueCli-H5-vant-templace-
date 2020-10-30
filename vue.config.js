@@ -96,5 +96,13 @@ module.exports = {
             })
             .end()
 
-    }
+    },
+    pluginOptions: {
+        i18n: {
+          locale: 'zh-chs',
+          fallbackLocale: 'en',
+          localeDir: 'locales',
+          enableInSFC: true
+        }
+      }
 }

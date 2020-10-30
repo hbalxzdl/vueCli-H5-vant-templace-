@@ -1,30 +1,16 @@
 <template>
     <div>
-        <van-nav-bar
-                title="首页"
-                fixed
-                @click-left="onClickLeft"
-                @click-right="onClickRight"
-        />
-
-        <van-list
-                v-model="loading"
-                :finished="finished"
-                finished-text="没有更多了"
-                @load="onLoad"
-        >
-            <van-cell v-for="item in list" :key="item" :title="item"/>
-        </van-list>
-
-        <div class="ceshi">ceshi </div>
+        <van-button type="primary" @click='onChange'>{{$t('_name')}}</van-button>
     </div>
 </template>
 
 <script>  
-
+    import localeMixin from '@/locales/mixin.js'
     export default { 
-       
         name: "index",
+        mixins: [
+            localeMixin
+        ],
         data() {
             return {
                 list: [],
@@ -32,9 +18,7 @@
                 finished: false,
             }
         },
-        mounted() {
-            console.log(this.$route)
-        },
+       
         methods: {
             onLoad() {
                 setTimeout(() => {
@@ -52,8 +36,10 @@
                 }, 1000);
             },
 
-            onClickLeft() {
-
+            onChange() {
+                this.finished=!this.finished  
+                this.onChangeLocale(this.finished ?'en-US':'zh-chs')
+                console.log(this.$languages)
             },
             onClickRight() {
 

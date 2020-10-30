@@ -46,16 +46,20 @@
                 password: '',
             }
         },
+        
 
         methods: {
-            ...mapActions('account',['login']),
+            ...mapActions('mobile/account',['login']),
+            // ...mapActions('mobile/user',['load']),
+           
 
             onSubmit(values) {
                 console.log('submit', values);
-                this.login(values).then(res=>{
-                    // 重定向对象不存在则返回顶层路径
-                    this.$router.replace(this.$route.query.redirect || '/')
-                })
+                // this.login(values).then(res=>{
+                //     // 重定向对象不存在则返回顶层路径
+                //     this.$router.replace(this.$route.query.redirect || '/')
+                // })
+              this.login()
 
             },
         }
